@@ -1,71 +1,75 @@
-# 1. 1.	Екі санның минимумын табу
-a = int(input("бірінші санды жазыңыз(мин табу): "))
-b = int(input("екінші санды жазыңыз: "))
+# 1. Минимум из двух чисел
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
 if a < b:
     print("Минимум:", a)
 else:
     print("Минимум:", b)
 
-
-# 2. 2.	Жұп немесе тақ
-n = int(input("Сан жазыңыз(жуп или так): "))
-if n % 2 == 0:
-    print("Сан жұп")
+# 2. Чётное или нечётное
+num = int(input("Введите число: "))
+if num % 2 == 0:
+    print("Число чётное")
 else:
-    print("сан тақ")
+    print("Число нечётное")
 
-
-# 3.	1-ден N-ге дейінгі сандардың қосындысы
-N = int(input("N(1-ден N-ге дейінгі сандардың қосындысы ) : "))
-s = 0
+# 3. Сумма чисел от 1 до N
+N = int(input("Введите число N: "))
+total = 0
 for i in range(1, N + 1):
-    s += i
-print("Сумма:", s)
+    total += i
+print("Сумма чисел от 1 до", N, "равна", total)
 
-
-# 4. 4.	Көбейту кестесі
-N = int(input(" сан жаз (көбейту кестесі): "))
+# 4. Таблица умножения
+N = int(input("Введите число N: "))
 for i in range(1, 11):
-    print(f"{N} x {i} = {N * i}")
+    print(N, "*", i, "=", N * i)
 
-
-# 5. 5.	Факториалды табу
-N = int(input("сан жазыңыз (факториал): "))
+# 5. Факториал числа
+N = int(input("Введите число N: "))
 fact = 1
 for i in range(1, N + 1):
     fact *= i
-print("Факториал:", fact)
+print("Факториал числа", N, "равен", fact)
 
-
-# 6. 6.	Дауысты әріптердің саны
-text = input("жол жазыныз: ")
-dauystyArip = "aeiouAEIOUауоыиэяюёеАУОЫИЭЯЮЁЕ"
+# 6. Количество гласных букв
+text = input("Введите строку: ")
+vowels = "aeiouаеёиоуыэюяAEIOUАЕЁИОУЫЭЮЯ"
 count = 0
-for ch in text:
-    if ch in dauystyArip:
+for char in text:
+    if char in vowels:
         count += 1
-print("дауысты ариптер:", count)
+print("Количество гласных букв:", count)
 
+# 7. Разворот строки
+text = input("Введите строку: ")
+reversed_text = text[::-1]
+print("Строка наоборот:", reversed_text)
 
-# 7. 7.	Жолды кері шығару
-text = input("жол жазыныз(наоборот шыгарад): ")
-print("керсінше: ", text[::-1])
+# 8. Максимум в массиве
+numbers = list(map(int, input("Введите числа через пробел: ").split()))
+maximum = numbers[0]
+for num in numbers:
+    if num > maximum:
+        maximum = num
+print("Максимум в массиве:", maximum)
 
+# 9. Сумма элементов массива
+numbers = list(map(int, input("Введите числа через пробел: ").split()))
+total = 0
+for num in numbers:
+    total += num
+print("Сумма элементов массива:", total)
 
-# 8. 8.	Массивтегі максимумды табу
-arr = list(map(int, input("пробелмен кез келген сандар жазыңыз(массив макс): ").split()))
-print("Максимум:", max(arr))
-
-
-# 9. 9.	Массив элементтерінің қосындысы
-arr = list(map(int, input("пробелмен кез келген сандар жазыңыз(массив косынды): ").split()))
-print("Косындысы:", sum(arr))
-
-
-# 10. 10.	Массивтен элемент іздеу
-arr = list(map(int, input("пробелмен кез келген сандар жазыңыз ( массив тан сан табу): ").split()))
-x = int(input("Іздейтін сан: "))
-if x in arr:
-    print(f"{x} массивта бар")
+# 10. Поиск числа X в массиве
+numbers = list(map(int, input("Введите числа через пробел: ").split()))
+X = int(input("Введите число для поиска: "))
+found = False
+for num in numbers:
+    if num == X:
+        found = True
+        break
+if found:
+    print("Число", X, "найдено в массиве")
 else:
-    print(f"{x} массивта жоқ")
+    print("Число", X, "не найдено в массиве")
